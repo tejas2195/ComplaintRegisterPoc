@@ -68,3 +68,30 @@ input[type=text], input[type=number],input[type=email],input[type=password]{
 .form-group{
   padding: 2% 15%;
 }
+
+/*Dashboard page style
+*/
+       .nav {
+  position:absolute;
+  display:inline-block;
+  font: size 5%;
+  font-weight:900;
+  color:#FFF;
+  background:lightgray;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.nav-item a {
+  display:block;
+  padding:15px 20px;
+}
+.nav-item{
+  margin-top: 10%;
+    margin-left: -10%;
+}
+.nav-item a:hover {
+  background:#2C3E50;
+}
+.home-sublink{
+  padding: 2%;
+}

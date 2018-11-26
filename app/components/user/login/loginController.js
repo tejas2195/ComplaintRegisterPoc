@@ -8,14 +8,10 @@ myCtrl.controller('userController', function($scope,$rootScope,$location,$http,$
         }
         $scope.redirectToDashboardPage = function(){
             userService.redirectToDashboardPage($scope.userId,$scope.password).then(function(response){
-                console.log(response.data.status);
+                console.log(response.data.data.firstName);
+                sessionStorage.setItem('firstName',response.data.data.firstName);
+                // console.log(accessData)
                 if(response.data.status === 'ok'){
-                        $rootScope.firstName = response.data.firstName,
-            $rootScope.lastName = response.data.lastName,
-            $rootScope.phoneNumber = response.data.phoneNumber,
-            $rootScope.emailId = response.data.emailId,
-            $rootScope.address=response.data.address,
-            $rootScope.password= response.data.password
                     $location.path('/dashboardPage')
             }else{
                 console.log(response.data.message);
@@ -24,7 +20,7 @@ myCtrl.controller('userController', function($scope,$rootScope,$location,$http,$
             });
         }
         $scope.logout = function () {
-            $window.localStorage.clear();
+            $window.sessionStorage.clear();
             $location.path('/loginPage')
         }
         $scope.redirectToLoginPage = function(){
@@ -35,11 +31,7 @@ myCtrl.controller('userController', function($scope,$rootScope,$location,$http,$
             $scope.complaints= "This is my complaint" + $rootScope.firstName;
         }
         $scope.getUserProfile = function(){
-             $scope.firstName = $rootScope.firstName;
-                $scope.lastName = $rootScope.lastName;
-                $scope.phoneNumber = $rootScope.phoneNumber;
-                $scope.emailId = $rootScope.emailId;
-                $scope.address= $rootScope.address;
-                $scope.password= $rootScope.password;
+            $scope.firstName = sessionStorage.getItem('firstName');
+            console.log($scope.firstName);
         }
     })

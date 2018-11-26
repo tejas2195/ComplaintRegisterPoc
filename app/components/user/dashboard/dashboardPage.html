@@ -1,41 +1,3 @@
-<style>
-       .nav {
-  position:absolute;
-  display:inline-block;
-  font: size 5%;
-  font-weight:900;
-  color:#FFF;
-  background:lightgray;
-  margin-left: 10%;
-  margin-top: 5%;
-}
-/* .nav-item {
-  *display:inline;
-  zoom:1;
-} */
-.nav-item a {
-  display:block;
-  padding:15px 20px;
-  /* color:#FFF;
-  background:#34495E; */
-}
-/* .nav-item:first-child a {
-  border-radius:5px 0 0 5px;
-}
-.nav-item:last-child a {
-  border-radius:0 5px 5px 0;
-} */
-.nav-item{
-  margin-top: 10%;
-    margin-left: -10%;
-}
-.nav-item a:hover {
-  background:#2C3E50;
-}
-.home-sublink{
-  padding: 2%;
-}
-        </style>
 <div class="container-fluid">
         <div class="row headBox" style="background-color:brown">
             <div class="col-md-6">
@@ -45,8 +7,8 @@
                 </p>
                 </div>
                 <div class="col-md-6 home-link">
-                        <a href="#/main" class="home-sublink">Home</a>
-                        <a ng-click="logout()" class="home-sublink">logout</a>
+                        <a href="#/main" class="home-sublink"  style="color:black;">Home</a>
+                        <a ng-click="logout()" class="home-sublink" style="color:black;">logout</a>
                 </div>
             </div>
             <div class="row">
@@ -54,7 +16,7 @@
                         
                         <nav class="nav">
                                 <ul class="nav-list">
-                                  <ul class="nav-item"><a href="#">Dashboard</a></ul>
+                                  <ul class="nav-item"><a href="#">Dashboard</a></ul>{{}}
                                   <ul class="nav-item"><a ng-click="complaints()">Complaints</a></ul>
                                   <ul class="nav-item"><a href="#/dashboardPage/addComplaint">Add Complaint</a></ul>
                                   <ul class="nav-item"><a ng-click="getUserProfile()">Profile</a></ul>
@@ -64,12 +26,7 @@
       <div class="col-md-8">
           <p>{{complaints}}</p>
           <p>
-              {{$scope.firstName}}
-              {{$scope.lastName}}
-              {{$scope.phoneNumber}}
-              {{$scope.emailId}}
-              {{$scope.address}}
-              {{$scope.password}}
+            {{firstName}}
           </p>
       </div>
       </div>
