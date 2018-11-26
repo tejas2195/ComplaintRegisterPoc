@@ -1,0 +1,31 @@
+ <div class="container-fluid">
+         <div class="row headBox" style="background-color:brown">
+             <div class="col-md-6">
+                 <h2 style="color:lightgoldenrodyellow">Complaint Regsiter</h2>
+                 <p style="color:lightgoldenrodyellow">
+                     <i>This is a place to report your problems and find a solution</i>
+                 </p>
+                 </div>
+             </div>
+             <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4 loginForm">
+                                    <div class="app-container app-container-medium">
+                                            <h2 class="header-title header-margin">Add your Complaint</h2>    
+                                            <form name="signInForm" novalidate="">
+                                                    <div class="form-group input-container">
+                                                            <input type='text' ng-model="complaintTitle" name="complaintTitle" placeholder="Title *" />
+                                                        </div>
+                                                    <div class="form-group input-container">
+                                                        <input type='text' ng-model="complaintDescription" name="complaintDescription" placeholder="Description *" />
+                                                        <button type="button" class="form-button"  ng-click="addComplaint()">Submit</button>
+                                                        <button  style="background-color:rgb(0, 195, 255)" type="button" ng-click="previousPage()">Cancel</button>                                      
+                                                    </div>
+                                            </form>
+                                </div>
+                    </div>
+                    <div class="col-md-4">
+                        
+                    </div>
+       </div>
+       </div>    

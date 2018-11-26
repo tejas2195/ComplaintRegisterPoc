@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+  <head>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+    <script src="https://code.angularjs.org/1.2.26/angular-route.min.js"></script>
+    <script src="app/components/user/login/loginController.js"></script>
+    <script src="app/components/user/login/loginService.js"></script>
+    <script src="app/components/user/register/registerController.js"></script>
+    <script src="app/components/user/register/registerService.js"></script>
+    <script src="app/components/user/dashboard/dashboardController.js"></script>
+    <script src="app/components/user/dashboard/dashboardService.js"></script>
+    <script src="app/app.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ 
+  </head>
+
+  <body>
+    
+    <div class="mainContainer" ng-view></div>
+  </body>
+
+</html>
