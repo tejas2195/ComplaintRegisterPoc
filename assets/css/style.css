@@ -156,12 +156,12 @@ button{
 }
 .new-complaint-form{
   text-align: center;
-  height:50%!important;
-  position: absolute;
-  margin-top: 20%;
-  margin-left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: lightgray;
+    height: 70%!important;
+    position: absolute!important;
+    margin-top: 14%;
+    margin-left: 60%;
+    transform: translate(-50%, -50%);
+    background-color: lightgray;
 }
 .complaintForm{
   padding: 2%;
@@ -184,4 +184,9 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+.errorMessage{
+  margin-top: 2%;
+  /* margin-left: 50%; */
 }

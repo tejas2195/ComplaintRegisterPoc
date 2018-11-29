@@ -24,10 +24,9 @@ angular.module('dashboardCtrl', [])
             if($scope.admin == 1){
                 console.log('I am an admin');
             dashboardService.getAllComplaints().then(function (response) {
-                    if (response.data.status === 'ok') {
+                    if (response.data.data.length != 0) {
                         $scope.records= response.data.data;
                         console.log($scope.records);
-                        // $location.path('viewComplaints')
                     } else {
                         console.log(response.data.message);
                         $scope.errorMessage = response.data.message;
@@ -39,12 +38,12 @@ angular.module('dashboardCtrl', [])
             console.log($scope.userId);
             dashboardService.getComplaints($scope.userId).then(function (response) {
                 console.log(response.data);
-                if (response.data.status === 'ok') {
+                if (response.data.data.length != 0) {
                     $scope.records= response.data.data;
-                    $location.path('viewComplaints')
+                    // $location.path('viewComplaints')
                 } else {
                     console.log(response.data.message);
-                    $scope.errorMessage = response.data.message;
+                    $scope.errorMessage = "You dont have any previous complaints. If you want to add one add it from add complaint section."
                 }
             });
         }
