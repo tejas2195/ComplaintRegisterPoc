@@ -1,41 +1,30 @@
 <div class="container-fluid">
-        <div class="row headBox" style="background-color:brown">
-            <div class="col-md-6">
-                <h2 style="color:lightgoldenrodyellow">Complaint Regsiter</h2>
-                <p style="color:lightgoldenrodyellow">
-                    <i>This is a place to report your problems and find a solution</i>
-                </p>
-                </div>
-                <div class="col-md-6 home-link">
-                        <a href="#/main" class="home-link">Home</a>
-                </div>
-            </div>
-            <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4 loginForm">
-                            <div class="app-container app-container-medium">
-                                    <h2 class="header-title header-margin">Sign In</h2>  
-                                    <p style="color:red;">{{errorMessage}}</p>  
-                                    <form name="signInForm" novalidate="">
-                                            <div class="form-group input-container">
-                                                    <!-- {{invalidErrorMessage}} -->
-                                                    <input type='text' ng-model="userId" name="userId" placeholder="Phone Number *" />
-                                                    <!-- {{userErrorMessage}} -->
-                                                </div>
-                                            <div class="form-group input-container">
-                                                <input type='password' ng-model="password" name="password" placeholder="Password *" />
-                                                <!-- {{pwdErrorMessage}}<br/> -->
-                                                <button type="button" class="form-button" ng-click="redirectToDashboardPage()">SignIn</button>                                        
-                                            </div>
-                                                <div class="form-group">
-                                                Not have an account?
-                                            <a href="#/registerPage">Click here to register</a>
-                                        </div>    
-                                    </form>
-                        </div>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
+    <div class="col-md-6">
     </div>
-
-        
+    <div class="col-md-6 home-link">
+        <a href="#/main" class="home-link">Home</a>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 loginForm">
+            <div class="app-container app-container-medium">
+                <h2 class="login-header-title header-margin">Sign In</h2>
+                <p class="error">{{errorMessage}}</p>
+                <form name="signInForm" ng-submit="redirectToDashboardPage(credentials)">
+                    <div class="form-group input-container">
+                        <input type='text' class="userId" ng-model="credentials.userId" name="userId" placeholder="Phone Number *" required="required">
+                    </div>
+                    <div class="form-group input-container">
+                        <input type='password' class="password" ng-model="credentials.password" name="password" placeholder="Password *">
+                        <button type="submit" class="form-button">SignIn</button>
+                    </div>
+                    <div class="form-group">
+                        Not have an account?
+                        <a ui-sref="registerPage">Click here to register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

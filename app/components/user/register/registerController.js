@@ -1,18 +1,13 @@
 var regCtrl = angular.module('regController',[]);
 
 regCtrl.controller('registerController', function($scope,$location,$http,registerService){
-            $scope.firstName = "";
-            $scope.lastName = "";
-            $scope.phoneNumber = "";
-            $scope.emailId = "";
-            $scope.address="";
-            $scope.password="";
+    $scope.userDetails = {};
         $scope.redirectToHomePage = function(){
             $location.path('/main')
         }
-        $scope.redirectToRegisterSuccessPage = function(){
-            registerService.redirectToRegisterSuccessPage($scope.firstName, $scope.lastName ,
-                $scope.phoneNumber, $scope.emailId, $scope.address, $scope.password).then(function(response){
+        $scope.redirectToRegisterSuccessPage = function(userDetails){
+            registerService.redirectToRegisterSuccessPage(userDetails.firstName, userDetails.lastName ,
+                userDetails.phoneNumber, userDetails.emailId, userDetails.address, userDetails.password).then(function(response){
                 if(response.data.status ==='ok'){
                     $location.path('/registerSuccessPage')
                 } else{

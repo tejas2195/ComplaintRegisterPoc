@@ -1,3 +1,25 @@
+/* Main home page*/
+.header-title, .header-description{
+  color:lightgoldenrodyellow
+}
+.headBox{
+  height: 150px;
+  background-color:brown;
+}
+.footer1{
+  background-color:brown;
+   height: 250px;
+}
+.footer2{
+height: 250px; 
+background-color:tomato;
+}
+.image1{
+background-color:chocolate;
+}
+.image2{
+  background-color:maroon;
+}
 .regButton, .loginButton{
   background-color:brown;
   color: white;
@@ -14,11 +36,14 @@ display: inline-block;
 }
 button{
   width: 30%;
-  padding: 10px 10px;
+  padding: 2% 2%;
   background-color:rgb(0, 195, 255);
 }
-
-input[type=text], input[type=number],input[type=email],input[type=password]{
+ /*login and register page */
+.error{
+ color:red;
+}
+.firstName, .lastName , .phoneNumber , .emailId, .address , .regPassword{
   padding: 5% 20%;
   margin: 8px 0;
   text-align:center;
@@ -28,6 +53,15 @@ input[type=text], input[type=number],input[type=email],input[type=password]{
 }
 .container{
   position: relative;
+}
+
+.userId, .password{
+  padding: 5% 20%;
+  margin: 8px 0;
+  text-align:center;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 .loginForm{
   text-align: center;
@@ -41,7 +75,7 @@ input[type=text], input[type=number],input[type=email],input[type=password]{
 
 .registerForm{
   text-align: center;
-  height:500px;
+  height:50%;
   background-color:lightgray;
   position: absolute;
   margin-top: 20%;
@@ -56,11 +90,9 @@ input[type=text], input[type=number],input[type=email],input[type=password]{
 .headrow{
   position: absolute;
 }
-.headBox{
-  height: 150px;
-}
+
 .home-link{
-  margin-top: 4%;
+  margin-top: -5%;
   color: black;
   text-align: center;
   font-size: 20px;
@@ -76,22 +108,80 @@ input[type=text], input[type=number],input[type=email],input[type=password]{
   display:inline-block;
   font: size 5%;
   font-weight:900;
-  color:#FFF;
+  /* color:#FFF; */
   background:lightgray;
   margin-left: 10%;
   margin-top: 5%;
+  cursor: pointer;
 }
 .nav-item a {
   display:block;
-  padding:15px 20px;
+  padding:15% 5%;
 }
 .nav-item{
-  margin-top: 10%;
-    margin-left: -10%;
+  border: black;
+    margin-left: -50%;
+    text-align: left;
 }
-.nav-item a:hover {
-  background:#2C3E50;
-}
+/* .nav-item a:hover {
+  background:lightblue;
+} */
 .home-sublink{
   padding: 2%;
+  color:black;
+}
+
+/*Add complaint page*/
+.userDashboard{
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+.add-complaint{
+  background-color:lightsalmon;
+  color: black;
+  padding: 2% 5%;
+  text-align: center;
+  /* text-decoration: none; */
+  display: inline-block;
+  cursor: pointer;
+}
+.complaint-title{
+  padding: 2% 25%;
+  text-align:center;
+}
+.complaint-description{
+  padding: 15% 25%;
+  text-align:center;
+}
+.new-complaint-form{
+  text-align: center;
+  height:50%!important;
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightgray;
+}
+.complaintForm{
+  padding: 2%;
+}
+
+
+/* View complaints page */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 120%;
+  height: 50%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px!important;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

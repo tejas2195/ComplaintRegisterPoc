@@ -1,31 +1,36 @@
- <div class="container-fluid">
-         <div class="row headBox" style="background-color:brown">
-             <div class="col-md-6">
-                 <h2 style="color:lightgoldenrodyellow">Complaint Regsiter</h2>
-                 <p style="color:lightgoldenrodyellow">
-                     <i>This is a place to report your problems and find a solution</i>
-                 </p>
-                 </div>
-             </div>
-             <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4 loginForm">
-                                    <div class="app-container app-container-medium">
-                                            <h2 class="header-title header-margin">Add your Complaint</h2>    
-                                            <form name="signInForm" novalidate="">
-                                                    <div class="form-group input-container">
-                                                            <input type='text' ng-model="complaintTitle" name="complaintTitle" placeholder="Title *" />
-                                                        </div>
-                                                    <div class="form-group input-container">
-                                                        <input type='text' ng-model="complaintDescription" name="complaintDescription" placeholder="Description *" />
-                                                        <button type="button" class="form-button"  ng-click="addComplaint()">Submit</button>
-                                                        <button  style="background-color:rgb(0, 195, 255)" type="button" ng-click="previousPage()">Cancel</button>                                      
-                                                    </div>
-                                            </form>
-                                </div>
+<div class="container-fluid">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6 home-link">
+        <a ui-sref="main" class="home-sublink">Home</a>
+        <a ng-click="logout()" class="home-sublink">logout</a>
+    </div>
+    <ng-include src="'app/shared/templates/sideBar.html'"></ng-include>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 new-complaint-form">
+            <div class="app-container app-container-medium">
+                <h2 class="add-comp-header-title header-margin">Add your Complaint</h2>
+                <form class="complaintForm" name="complaintForm" novalidate="" ng-submit="addComplaint(complaint)">
+                    <div class="form-group input-container">
+                        <label for="complaintTitle">Title *</label>
+                        <br/>
+                        <input type='text' class="complaint-title" ng-model="complaint.title" name="complaintTitle" placeholder="Title" />
                     </div>
-                    <div class="col-md-4">
-                        
+                    <div class="form-group input-container">
+                        <label for="complaintDescription">Description *</label>
+                        <input type='text' class="complaint-description" ng-model="complaint.description" name="complaintDescription" placeholder="Description"
+                        />
                     </div>
-       </div>
-       </div>    
+                    <div>
+                        <button type="submit" class="complaint-form-button">Submit</button>
+                        <button type="button" class="complaint-form-button" ng-click="previousPage()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+</div>

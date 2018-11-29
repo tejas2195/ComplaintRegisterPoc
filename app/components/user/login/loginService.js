@@ -8,4 +8,7 @@ myService.service('userService',['$http',function($http){
         }
         return $http.post('http://localhost:3005/login',body);
     };
+    this.getAllComplaints = function(){
+        return $http.get('http://localhost:3005/complains');
+    }
 }])

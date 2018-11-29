@@ -1,39 +1,52 @@
-var myApp = angular.module("myApp", ['ngRoute','ngMessages', 'controller','service','regController',
+var myApp = angular.module("myApp", ['ui.router','ngMessages', 'controller','service','regController',
 'regService','dashboardCtrl','dashService']);
-myApp.config(function($routeProvider) {
+myApp.config(function($stateProvider,$urlRouterProvider) {
   
-    $routeProvider
-    .when('/main', {
+  $urlRouterProvider.otherwise('/main');
+    $stateProvider
+    .state('main',{
+      url:'/main',
        controller: 'userController',
       templateUrl: 'app/components/user/main/main.html'
     })
-    .when('/registerPage', {
+    .state('registerPage', {
+      url:'/registerPage',
       controller: 'registerController',
       templateUrl: 'app/components/user/register/registerPage.html'
     })
-    .when('/loginPage', {
+    .state('loginPage', {
+      url:'/loginPage',      
       controller: 'userController',
       templateUrl: 'app/components/user/login/loginPage.html'
     })
-    .when('/dashboardPage', {
+    .state('dashboardPage', {
+      url:'/dashboardPage',    
       controller: 'userController',
       templateUrl: 'app/components/user/dashboard/dashboardPage.html'
     })
-    .when('/registerSuccessPage', {
+    .state('registerSuccessPage', {
+      url: '/registerSuccessPage',
       controller: 'registerController',
       templateUrl: 'app/components/user/register/registerSuccessPage.html'
     })
-    .when('/complaints', {
+    .state('addComplaints', {
+      url: '/addComplaints',
       controller: 'userController',
-      templateUrl: 'app/components/user/dashboard/complaints.html'
+      templateUrl: 'app/components/user/dashboard/addComplaints.html'
     })
-    .when('/dashboardPage/addComplaint', {
+    .state('addComplaint', {
+      url:'/dashboardPage/addComplaint',
       controller: 'dashboardController',
       templateUrl: 'app/components/user/dashboard/addComplaint.html'
     })
-    .when('/dashboardPage/addComplaint/complaintUploadSuccessfullPage',{
+    .state('complaintUploadSuccessfullPage',{
+      url:'/complaintUploadSuccessfullPage',
       controller: 'dashboardController',
       templateUrl: 'app/components/user/dashboard/complaintUploadSuccessfull.html'      
     })
-    .otherwise({redirectTo: '/main'});
+    .state('viewComplaints',{
+      url:'/dashboardPage/viewComplaints',
+      controller: 'dashboardController',
+      templateUrl: 'app/components/user/dashboard/viewComplaints.html'      
+    })
   });

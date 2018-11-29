@@ -1,56 +1,68 @@
 <div class="container-fluid">
-        <div class="row headBox" style="background-color:brown">
-            <div class="col-md-6">
-                <h2 style="color:lightgoldenrodyellow">Complaint Regsiter</h2>
-                <p style="color:lightgoldenrodyellow">
-                    <i>This is a place to report your problems and find a solution</i>
-                </p>
-                </div>
-                <div class="col-md-6 home-link">
-                        <a href="#/main" class="home-link">Home</a>
-                </div>
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6 home-link">
+        <a href="#/main" class="home-link">Home</a>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 registerForm">
+            <p class="error">{{errorMessage}}</p>
+            <div class="app-container app-container-medium">
+                <h2 class="reg-header-title">Register</h2>
+                <form name="myForm" ng-submit="redirectToRegisterSuccessPage(register)">
+                    <div class="row">
+                        <div class="col-md-6 reg-form">
+                            <label for='firstName'>
+                                <b>FirstName *</b>
+                            </label>
+                            <br/>
+                            <input type='text' class="firstName" ng-model="register.firstName" required="required" name="firstName" placeholder="Enter your Firstname">
+                        </div>
+                        <div class="col-md-6 reg-form">
+                            <label for="lastName">
+                                <b>LastName *</b>
+                            </label>
+                            <br/>
+                            <input type="text" class="lastName" ng-model="register.lastName" name="lastName" placeholder="Enter your Lastname" required>
+                        </div>
+                        <div class="col-md-6 reg-form">
+                            <label for="phoneNumber">
+                                <b>PhoneNumber *</b>
+                            </label>
+                            <br/>
+                            <input type="text" class="phoneNumber" ng-model="register.phoneNumber" name="phoneNumber" placeholder="Enter your Phone number" required>
+                        </div>
+                        <div class="col-md-6 reg-form">
+                            <label for="emailId">
+                                <b>Email Id</b>
+                            </label>
+                            <br/>
+                            <input type="email" class="emailId" ng-model="register.emailId" name="emailId" placeholder="Enter your Email Id">
+                        </div>
+                        <div class="col-md-6 reg-form">
+                            <label for="address">
+                                <b>Address *</b>
+                            </label>
+                            <br/>
+                            <input type="text" class="address" ng-model="register.address" name="address" placeholder="Enter your Address" required>
+                        </div>
+                        <div class="col-md-6 reg-form">
+                            <label for="pwd">
+                                <b>Password *</b>
+                            </label>
+                            <br/>
+                            <input type="password" class="regPassword" ng-model="register.password" name="password" placeholder="Enter your Password" required>
+                        </div>
+                        <div class="col-md-12 reg-form">
+                            <br/>
+                            <button type="submit">Submit</button>
+                            <button type="button" ng-click="redirectToHomePage()">Cancel</button>
+                        </div>
+                    </div>
+                </form>
             </div>
- <div class="row">
-     <div class="col-md-2"></div>
-     <div class="col-md-8 registerForm">
-         <p style="color:red;">{{errorMessage}}</p>
-         <div class="app-container app-container-medium">
-                <h2 class="header-title">Register</h2>
-    <form name="myForm" ng-submit="redirectToRegisterSuccessPage()">
-        <div class="row">
-        <div class="col-md-6 reg-form">
-            <label for='firstName'><b>FirstName *</b></label><br/>
-            <input type='text' ng-model="firstName" required="required" name="firstName" placeholder="Enter your Firstname">
-            <span ng-show="myForm.firstName.$touched && myForm.firstName.$invalid">Name is Mandatory</span>
-            </div>
-            <div class="col-md-6 reg-form">
-            <label for="lastName"><b>LastName *</b></label><br/>
-            <input type="text" ng-model="lastName" name="lastName" placeholder="Enter your Lastname" required>
         </div>
-        <div class="col-md-6 reg-form">
-            <label for="phoneNumber"><b>PhoneNumber *</b></label><br/>
-            <input type="text" ng-model="phoneNumber" name="phoneNumber" placeholder="Enter your Phone number" required>
-</div>
-<div class="col-md-6 reg-form">
-            <label for="emailId"><b>Email Id</b></label><br/>
-            <input type="email" ng-model="emailId" name="emailId" placeholder="Enter your Email Id">
-</div>
-<div class="col-md-6 reg-form">
-            <label for="address"><b>Address *</b></label><br/>
-            <input type="text" ng-model="address" name="address" placeholder="Enter your Address" required>
-</div>
-<div class="col-md-6 reg-form">
-            <label for="pwd"><b>Password *</b></label><br/>
-            <input type="password" ng-model="password" name="password" placeholder="Enter your Password" required>
-</div>
-<div class="col-md-12 reg-form">
-            <br/><button  style="background-color:rgb(0, 195, 255)" type="submit">Submit</button>
-            <button  style="background-color:rgb(0, 195, 255)" type="button" ng-click="redirectToHomePage()">Cancel</button>
-        </div>
-    </div>
-    </form>
-    </div>
-    </div>
-    <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
     </div>
 </div>
