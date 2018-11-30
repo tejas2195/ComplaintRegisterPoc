@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6 home-link">
+        <a ui-sref="main" class="home-sublink">Home</a>
+        <a ng-click="logout()" class="home-sublink">logout</a>
+    </div>
+    <ng-include src="'app/shared/templates/sideBar.html'"></ng-include>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+            <div class="app-container app-container-medium">
+                <h2>List of Complaints</h2>
+
+                <table class="view-comp-table">
+                    <tr class="view-comp-table-row"> 
+                        <th class="view-comp-table-header">Complaint Id</th>
+                        <th class="view-comp-table-header">User Id</th>
+                        <th class="view-comp-table-header">Title</th>
+                        <th class="view-comp-table-header">Details</th>
+                    </tr>
+                    <tr class="view-comp-table-row" ng-repeat="x in records">
+                        <td class="view-comp-table-data">{{x.complainId}}</td>
+                        <td class="view-comp-table-data">{{x.userId}}</td>
+                        <td class="view-comp-table-data">{{x.title}}</td>
+                        <td class="view-comp-table-data">{{x.detail}}</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p class="errorMessage"><h3><b>{{errorMessage}}</b></h3></p>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

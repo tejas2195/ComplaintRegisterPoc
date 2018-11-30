@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6 home-link">
+        <a ui-sref="main" class="home-sublink">Home</a>
+        <a ng-click="logout()" class="home-sublink">logout</a>
+    </div>
+    <ng-include src="'app/shared/templates/sideBar.html'"></ng-include>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+            <div class="app-container app-container-medium">
+                <h2 class="profile-header">User Profile</h2>
+
+                <table class="view-profile-table">
+                    <tr class="view-profile-table-row">
+                        <td class="view-profile-table-data">FirstName</td>
+                        <td class="view-profile-table-data">{{firstName}}</td>
+                    </tr>
+                    <tr class="view-profile-table-row">
+                        <td class="view-profile-table-data">LastName</td>
+                        <td class="view-profile-table-data">{{lastName}}</td>
+                    </tr>
+                    <tr class="view-profile-table-row">
+                        <td class="view-profile-table-data">PhoneNumber</td>
+                        <td class="view-profile-table-data">{{phoneNumber}}</td>
+                    </tr>
+                    <tr class="view-profile-table-row">
+                        <td class="view-profile-table-data">EmailId</td>
+                        <td class="view-profile-table-data">{{email}}</td>
+                    </tr>
+                    <tr class="view-profile-table-row">
+                        <td class="view-profile-table-data">Address</td>
+                        <td class="view-profile-table-data">{{address}}</td>
+                    </tr>
+                    <tr class="view-profile-table-row">
+                        <td class="view-profile-table-data">Password</td>
+                        <td class="view-profile-table-data">{{password}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <a ui-sref = "profileEdit"><b>Edit</b></a>
+        </div>
+    </div>
+</div>

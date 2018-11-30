@@ -5,9 +5,9 @@
         <a ui-sref="main" class="home-sublink">Home</a>
         <a ng-click="logout()" class="home-sublink">logout</a>
     </div>
-    <div class="row">
     <ng-include src="'app/shared/templates/sideBar.html'"></ng-include>
-        <div class="col-md-4"></div>
+    <div class="row">
+        <div class="col-md-3"></div>
         <div class="col-md-6 new-complaint-form">
             <div class="app-container app-container-medium">
                 <h2 class="add-comp-header-title header-margin">Add your Complaint</h2>
@@ -22,13 +22,12 @@
                         <input type='text' class="complaint-description" ng-model="complaint.description" name="complaintDescription" placeholder="Description"
                         />
                     </div>
-                    <div>
+                    <div class="form-group input-container">
                         <button type="submit" class="complaint-form-button">Submit</button>
-                        <button type="button" class="complaint-form-button" ng-click="previousPage()">Cancel</button>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-3"></div>
     </div>
 </div>
